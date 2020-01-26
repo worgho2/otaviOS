@@ -20,7 +20,7 @@ class DesktopViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var clockLabel: UILabel!
     
-//    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge { return .bottom}
+    @IBOutlet weak var startMenuView: UIView!
     
     var mechanicalTapSystem = mechanicalTap()
 
@@ -55,6 +55,9 @@ class DesktopViewController: UIViewController {
         self.readMeButton.setBackgroundImage(UIImage(named: "readme_normal"), for: .normal)
         self.crackButton.setBackgroundImage(UIImage(named: "crack_normal"), for: .normal)
         self.startButton.setBackgroundImage(UIImage(named: "start_normal"), for: .normal)
+        
+        self.startMenuView.isHidden = true
+        self.startMenuView.isUserInteractionEnabled = false
     }
     
     private func setSelectedButtonBackground(buttonTag: Int) {
@@ -71,8 +74,10 @@ class DesktopViewController: UIViewController {
             self.crackButton.setBackgroundImage(UIImage(named: "crack_pressed"), for: .normal)
         case 4:
             self.startButton.setBackgroundImage(UIImage(named: "start_pressed"), for: .normal)
+            self.startMenuView.isHidden = false
+            self.startMenuView.isUserInteractionEnabled = true
+            
         default:
-            print("Error Changing button background image")
             break
         }
     }
@@ -95,8 +100,13 @@ class DesktopViewController: UIViewController {
         HapticFeedbackCenter.shared.impact.impactOccurred()
         
         self.setSelectedButtonBackground(buttonTag: sender.tag)
-        
         self.mechanicalTapSystem.addTap(buttonTag: sender.tag)
+        
+        if [5,6,7,8,9,10].contains(sender.tag) {
+            print("Vai acessar o botão de tag: \(mechanicalTapSystem.tappedTag)")
+            self.decideSegueRoute()
+        }
+        
         if mechanicalTapSystem.isDoubleTap {
             print("Vai acessar o botão de tag: \(mechanicalTapSystem.tappedTag)")
             self.decideSegueRoute()
@@ -110,17 +120,18 @@ class DesktopViewController: UIViewController {
     
     func decideSegueRoute() {
         switch self.mechanicalTapSystem.tappedTag {
-        case 0:
+        case 0, 5:
             self.performSegue(withIdentifier: Model.instance.isConsoleCracked ? "segueConsole" : "segueAlert", sender: nil)
-        case 1:
-//            self.performSegue(withIdentifier: Model.instance.hasInternetExplorerAccess ? "segueInternetExplorer" : "segueAlert", sender: nil)
+        case 1, 6:
             self.performSegue(withIdentifier: "segueAlert", sender: nil)
-        case 2:
+        case 2, 7:
             self.performSegue(withIdentifier: "segueNotepad", sender: nil)
-        case 3:
+        case 3, 8:
             self.performSegue(withIdentifier: "segueCrack", sender: nil)
+        case 9, 10:
+            self.performSegue(withIdentifier: "segueAlert", sender: nil)
         default:
-            print("Error deciding segue")
+            print("Warning - No segue detected")
         }
         
     }
@@ -128,9 +139,9 @@ class DesktopViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueAlert" {
             if let vc = segue.destination as? AlertViewController {
-                if mechanicalTapSystem.tappedTag == 0 {
+                if mechanicalTapSystem.tappedTag == 0 || mechanicalTapSystem.tappedTag == 5 {
                     vc.content = AlertContent(actionText: "Close", alertType: .error, description: "License checkout timed out.", content: "A licensing error occurred while the user was attempting to connect (Licensing timed out).")
-                } else if mechanicalTapSystem.tappedTag == 1 && !Model.instance.hasInternetExplorerAccess{
+                } else if (mechanicalTapSystem.tappedTag == 1 || mechanicalTapSystem.tappedTag == 6) && !Model.instance.hasInternetExplorerAccess{
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "File Access Denied", content: "You'll need to provide administrator permission to access Internet Explorer.")
                 } else {
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "Work in Progress", content: "This feature has't been developed yet. Wait for it :)")

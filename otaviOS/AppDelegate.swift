@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge { return .bottom}
+        
         UIDevice.current.isBatteryMonitoringEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.cableChanged), name: UIDevice.batteryStateDidChangeNotification, object: nil)
         
