@@ -19,6 +19,8 @@ class NotepadViewController: UIViewController {
     }
     
     @IBAction func onClose(_ sender: Any) {
+        HapticFeedbackCenter.shared.impact.impactOccurred()
+        AudioManager.shared.play(soundEffect: .start)
         self.dismiss(animated: false, completion: nil)
     }
     

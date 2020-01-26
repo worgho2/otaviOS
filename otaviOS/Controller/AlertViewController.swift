@@ -36,6 +36,16 @@ class AlertViewController: UIViewController {
         self.setupContent(actionText: content!.actionText, alertType: content!.alertType, description: content!.description, content: content!.content)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if content?.alertType == .warning {
+            HapticFeedbackCenter.shared.notification.notificationOccurred(.warning)
+            AudioManager.shared.play(soundEffect: .exclamation)
+        } else if content?.alertType == .error {
+            HapticFeedbackCenter.shared.notification.notificationOccurred(.error)
+            AudioManager.shared.play(soundEffect: .error)
+        }
+    }
+    
     private func setupContent(actionText: String, alertType: AlertType, description: String, content: String) {
         self.actionButton.setTitle(actionText, for: .normal)
         self.alertImageView.image = UIImage(named: alertType.rawValue)!
@@ -44,10 +54,14 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func onAction(_ sender: Any) {
+        AudioManager.shared.play(soundEffect: .start)
+        HapticFeedbackCenter.shared.impact.impactOccurred()
         self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func onClose(_ sender: Any) {
+        AudioManager.shared.play(soundEffect: .start)
+        HapticFeedbackCenter.shared.impact.impactOccurred()
         self.dismiss(animated: false, completion: nil)
     }
 

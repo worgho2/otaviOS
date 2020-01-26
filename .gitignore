@@ -90,3 +90,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 otaviOS/.DS_Store
+
+.DS_Store

@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A117FAE23DBAED200099F80 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FAD23DBAED200099F80 /* ConsoleViewController.swift */; };
+		7A117FB023DBAF0800099F80 /* Console.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FAF23DBAF0800099F80 /* Console.storyboard */; };
+		7A117FB823DD222100099F80 /* IntroWithLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FB323DD222100099F80 /* IntroWithLoop.swift */; };
+		7A117FB923DD222100099F80 /* AudioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FB423DD222100099F80 /* AudioLibrary.swift */; };
+		7A117FBA23DD222100099F80 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FB523DD222100099F80 /* Song.swift */; };
+		7A117FBB23DD222100099F80 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FB623DD222100099F80 /* SoundEffects.swift */; };
+		7A117FBC23DD222100099F80 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FB723DD222100099F80 /* AudioManager.swift */; };
+		7A117FC623DD24D400099F80 /* Windows XP Shutdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FBE23DD24D400099F80 /* Windows XP Shutdown.wav */; };
+		7A117FC723DD24D400099F80 /* Windows XP Print complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FBF23DD24D400099F80 /* Windows XP Print complete.wav */; };
+		7A117FC823DD24D400099F80 /* Windows XP Exclamation.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC023DD24D400099F80 /* Windows XP Exclamation.wav */; };
+		7A117FC923DD24D400099F80 /* Windows XP Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC123DD24D400099F80 /* Windows XP Error.wav */; };
+		7A117FCA23DD24D400099F80 /* Windows XP Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC223DD24D400099F80 /* Windows XP Start.wav */; };
+		7A117FCB23DD24D400099F80 /* Windows XP Startup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC323DD24D400099F80 /* Windows XP Startup.wav */; };
+		7A117FCC23DD24D400099F80 /* Windows XP Hardware Remove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC423DD24D400099F80 /* Windows XP Hardware Remove.wav */; };
+		7A117FCD23DD24D400099F80 /* Windows XP Hardware Insert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FC523DD24D400099F80 /* Windows XP Hardware Insert.wav */; };
+		7A117FCF23DD2D9700099F80 /* Windows XP Information Bar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FCE23DD2D9700099F80 /* Windows XP Information Bar.wav */; };
+		7A117FD123DD2E7D00099F80 /* Windows XP Menu Command.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A117FD023DD2E7D00099F80 /* Windows XP Menu Command.wav */; };
+		7A117FD423DD306F00099F80 /* HapticFeedbackCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A117FD323DD306F00099F80 /* HapticFeedbackCenter.swift */; };
 		7AA024A423D9F79600284E01 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA024A323D9F79600284E01 /* Startup.storyboard */; };
 		7AA024A623D9F82D00284E01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA024A523D9F82D00284E01 /* LaunchScreen.storyboard */; };
 		7AA3EFC123D8C30B002DB972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3EFC023D8C30B002DB972 /* AppDelegate.swift */; };
@@ -28,6 +46,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A117FAD23DBAED200099F80 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		7A117FAF23DBAF0800099F80 /* Console.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Console.storyboard; sourceTree = "<group>"; };
+		7A117FB323DD222100099F80 /* IntroWithLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroWithLoop.swift; sourceTree = "<group>"; };
+		7A117FB423DD222100099F80 /* AudioLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLibrary.swift; sourceTree = "<group>"; };
+		7A117FB523DD222100099F80 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		7A117FB623DD222100099F80 /* SoundEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		7A117FB723DD222100099F80 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		7A117FBE23DD24D400099F80 /* Windows XP Shutdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Shutdown.wav"; sourceTree = "<group>"; };
+		7A117FBF23DD24D400099F80 /* Windows XP Print complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Print complete.wav"; sourceTree = "<group>"; };
+		7A117FC023DD24D400099F80 /* Windows XP Exclamation.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Exclamation.wav"; sourceTree = "<group>"; };
+		7A117FC123DD24D400099F80 /* Windows XP Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Error.wav"; sourceTree = "<group>"; };
+		7A117FC223DD24D400099F80 /* Windows XP Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Start.wav"; sourceTree = "<group>"; };
+		7A117FC323DD24D400099F80 /* Windows XP Startup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Startup.wav"; sourceTree = "<group>"; };
+		7A117FC423DD24D400099F80 /* Windows XP Hardware Remove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Hardware Remove.wav"; sourceTree = "<group>"; };
+		7A117FC523DD24D400099F80 /* Windows XP Hardware Insert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Hardware Insert.wav"; sourceTree = "<group>"; };
+		7A117FCE23DD2D9700099F80 /* Windows XP Information Bar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Information Bar.wav"; sourceTree = "<group>"; };
+		7A117FD023DD2E7D00099F80 /* Windows XP Menu Command.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Windows XP Menu Command.wav"; sourceTree = "<group>"; };
+		7A117FD323DD306F00099F80 /* HapticFeedbackCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackCenter.swift; sourceTree = "<group>"; };
 		7AA024A323D9F79600284E01 /* Startup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Startup.storyboard; sourceTree = "<group>"; };
 		7AA024A523D9F82D00284E01 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AA3EFBD23D8C30B002DB972 /* otaviOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = otaviOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +97,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A117FB123DD21C900099F80 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7A117FD223DD302F00099F80 /* HapticFeedback */,
+				7A117FB223DD220700099F80 /* Audio */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7A117FB223DD220700099F80 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				7A117FB423DD222100099F80 /* AudioLibrary.swift */,
+				7A117FB723DD222100099F80 /* AudioManager.swift */,
+				7A117FB323DD222100099F80 /* IntroWithLoop.swift */,
+				7A117FB523DD222100099F80 /* Song.swift */,
+				7A117FB623DD222100099F80 /* SoundEffects.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		7A117FBD23DD24B300099F80 /* SoudTracks */ = {
+			isa = PBXGroup;
+			children = (
+				7A117FD023DD2E7D00099F80 /* Windows XP Menu Command.wav */,
+				7A117FCE23DD2D9700099F80 /* Windows XP Information Bar.wav */,
+				7A117FC123DD24D400099F80 /* Windows XP Error.wav */,
+				7A117FC023DD24D400099F80 /* Windows XP Exclamation.wav */,
+				7A117FC523DD24D400099F80 /* Windows XP Hardware Insert.wav */,
+				7A117FC423DD24D400099F80 /* Windows XP Hardware Remove.wav */,
+				7A117FBF23DD24D400099F80 /* Windows XP Print complete.wav */,
+				7A117FBE23DD24D400099F80 /* Windows XP Shutdown.wav */,
+				7A117FC223DD24D400099F80 /* Windows XP Start.wav */,
+				7A117FC323DD24D400099F80 /* Windows XP Startup.wav */,
+			);
+			path = SoudTracks;
+			sourceTree = "<group>";
+		};
+		7A117FD223DD302F00099F80 /* HapticFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				7A117FD323DD306F00099F80 /* HapticFeedbackCenter.swift */,
+			);
+			path = HapticFeedback;
+			sourceTree = "<group>";
+		};
 		7AA3EFB423D8C30B002DB972 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +169,8 @@
 				7AA3EFD623D8C369002DB972 /* Controller */,
 				7AA3EFD523D8C361002DB972 /* View */,
 				7AA3EFD423D8C35C002DB972 /* Model */,
+				7A117FB123DD21C900099F80 /* Modules */,
+				7A117FBD23DD24B300099F80 /* SoudTracks */,
 				7ADB03F623D9FFC2009C161A /* Fonts */,
 			);
 			path = otaviOS;
@@ -110,6 +194,7 @@
 				7ADB040323DA691A009C161A /* Alert.storyboard */,
 				7ADB040823DA9DDD009C161A /* Notepad.storyboard */,
 				7ADB040C23DAAB56009C161A /* Crack.storyboard */,
+				7A117FAF23DBAF0800099F80 /* Console.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +207,7 @@
 				7ADB040623DA6944009C161A /* AlertViewController.swift */,
 				7ADB040A23DA9DE9009C161A /* NotepadViewController.swift */,
 				7ADB040E23DAAB64009C161A /* CrackViewController.swift */,
+				7A117FAD23DBAED200099F80 /* ConsoleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,12 +279,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A117FCF23DD2D9700099F80 /* Windows XP Information Bar.wav in Resources */,
 				7ADB03FC23DA0215009C161A /* Desktop.storyboard in Resources */,
+				7A117FC923DD24D400099F80 /* Windows XP Error.wav in Resources */,
+				7A117FC823DD24D400099F80 /* Windows XP Exclamation.wav in Resources */,
+				7A117FC623DD24D400099F80 /* Windows XP Shutdown.wav in Resources */,
+				7A117FCC23DD24D400099F80 /* Windows XP Hardware Remove.wav in Resources */,
 				7ADB03F823D9FFE4009C161A /* Microsoft Sans Serif.ttf in Resources */,
+				7A117FD123DD2E7D00099F80 /* Windows XP Menu Command.wav in Resources */,
+				7A117FCD23DD24D400099F80 /* Windows XP Hardware Insert.wav in Resources */,
 				7ADB040023DA07CF009C161A /* px_sans_nouveaux.ttf in Resources */,
 				7AA024A623D9F82D00284E01 /* LaunchScreen.storyboard in Resources */,
+				7A117FCA23DD24D400099F80 /* Windows XP Start.wav in Resources */,
+				7A117FCB23DD24D400099F80 /* Windows XP Startup.wav in Resources */,
 				7ADB040923DA9DDD009C161A /* Notepad.storyboard in Resources */,
+				7A117FC723DD24D400099F80 /* Windows XP Print complete.wav in Resources */,
 				7ADB040D23DAAB56009C161A /* Crack.storyboard in Resources */,
+				7A117FB023DBAF0800099F80 /* Console.storyboard in Resources */,
 				7AA024A423D9F79600284E01 /* Startup.storyboard in Resources */,
 				7ADB040423DA691A009C161A /* Alert.storyboard in Resources */,
 				7AA3EFCA23D8C30C002DB972 /* Assets.xcassets in Resources */,
@@ -213,13 +310,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ADB040B23DA9DE9009C161A /* NotepadViewController.swift in Sources */,
+				7A117FB823DD222100099F80 /* IntroWithLoop.swift in Sources */,
 				7ADB03FA23DA0178009C161A /* StartupViewController.swift in Sources */,
+				7A117FBC23DD222100099F80 /* AudioManager.swift in Sources */,
+				7A117FD423DD306F00099F80 /* HapticFeedbackCenter.swift in Sources */,
 				7ADB040723DA6944009C161A /* AlertViewController.swift in Sources */,
+				7A117FB923DD222100099F80 /* AudioLibrary.swift in Sources */,
 				7ADB03FE23DA021F009C161A /* DesktopViewController.swift in Sources */,
 				7AA3EFC123D8C30B002DB972 /* AppDelegate.swift in Sources */,
 				7AA3EFC323D8C30B002DB972 /* SceneDelegate.swift in Sources */,
 				7ADB040223DA3048009C161A /* MechanicalTap.swift in Sources */,
 				7AA3EFD823D9F0CB002DB972 /* Model.swift in Sources */,
+				7A117FBB23DD222100099F80 /* SoundEffects.swift in Sources */,
+				7A117FAE23DBAED200099F80 /* ConsoleViewController.swift in Sources */,
+				7A117FBA23DD222100099F80 /* Song.swift in Sources */,
 				7ADB040F23DAAB64009C161A /* CrackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

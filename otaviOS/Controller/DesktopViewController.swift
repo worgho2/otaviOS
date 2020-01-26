@@ -91,6 +91,9 @@ class DesktopViewController: UIViewController {
     }
     
     @IBAction func onClick(_ sender: UIButton) {
+        AudioManager.shared.play(soundEffect: .start)
+        HapticFeedbackCenter.shared.impact.impactOccurred()
+        
         self.setSelectedButtonBackground(buttonTag: sender.tag)
         
         self.mechanicalTapSystem.addTap(buttonTag: sender.tag)
@@ -101,6 +104,7 @@ class DesktopViewController: UIViewController {
     }
     
     @IBAction func onEmpty(_ sender: Any) {
+        HapticFeedbackCenter.shared.impact.impactOccurred()
         self.setDefaultButtonBackground()
     }
     
@@ -109,7 +113,8 @@ class DesktopViewController: UIViewController {
         case 0:
             self.performSegue(withIdentifier: Model.instance.isConsoleCracked ? "segueConsole" : "segueAlert", sender: nil)
         case 1:
-            self.performSegue(withIdentifier: Model.instance.hasInternetExplorerAccess ? "segueInternetExplorer" : "segueAlert", sender: nil)
+//            self.performSegue(withIdentifier: Model.instance.hasInternetExplorerAccess ? "segueInternetExplorer" : "segueAlert", sender: nil)
+            self.performSegue(withIdentifier: "segueAlert", sender: nil)
         case 2:
             self.performSegue(withIdentifier: "segueNotepad", sender: nil)
         case 3:
@@ -125,8 +130,10 @@ class DesktopViewController: UIViewController {
             if let vc = segue.destination as? AlertViewController {
                 if mechanicalTapSystem.tappedTag == 0 {
                     vc.content = AlertContent(actionText: "Close", alertType: .error, description: "License checkout timed out.", content: "A licensing error occurred while the user was attempting to connect (Licensing timed out).")
-                } else if mechanicalTapSystem.tappedTag == 1 {
+                } else if mechanicalTapSystem.tappedTag == 1 && !Model.instance.hasInternetExplorerAccess{
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "File Access Denied", content: "You'll need to provide administrator permission to access Internet Explorer.")
+                } else {
+                    vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "Work in Progress", content: "This feature has't been developed yet. Wait for it :)")
                 }
             }
         }

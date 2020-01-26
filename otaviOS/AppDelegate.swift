@@ -10,9 +10,22 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    @objc func cableChanged() {
+        print("carai")
+        if UIDevice.current.batteryState == .charging || UIDevice.current.batteryState == .full {
+            AudioManager.shared.play(soundEffect: .hardwareInsert)
+        } else {
+            AudioManager.shared.play(soundEffect: .hardwareRemove)
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.cableChanged), name: UIDevice.batteryStateDidChangeNotification, object: nil)
+        
         return true
     }
 

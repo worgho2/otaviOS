@@ -61,10 +61,16 @@ class CrackViewController: UIViewController {
     }
 
     @IBAction func onClose(_ sender: Any) {
+        HapticFeedbackCenter.shared.impact.impactOccurred()
+        AudioManager.shared.play(soundEffect: .start)
+        
         self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func onAction(_ sender: Any) {
+        HapticFeedbackCenter.shared.impact.impactOccurred()
+        AudioManager.shared.play(soundEffect: .start)
+        
         if Model.instance.isConsoleCracked == true {
             self.dismiss(animated: false, completion: nil)
             return
@@ -88,6 +94,8 @@ class CrackViewController: UIViewController {
                     
                     if self.currentTarget == 2 {
                         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+                            HapticFeedbackCenter.shared.notification.notificationOccurred(.success)
+                            AudioManager.shared.play(soundEffect: .printComplete)
                             self.crackProgressView.setProgress(1, animated: true)
                             
                             self.statusLabel.text = "Success!"
@@ -99,10 +107,10 @@ class CrackViewController: UIViewController {
                             self.actionButton.isUserInteractionEnabled = true
                             
                             Model.instance.isConsoleCracked = true
-                            
-                            print("sucesso no crack") //fim do ciclo positivo
                         }
                     } else {
+                        HapticFeedbackCenter.shared.notification.notificationOccurred(.error)
+                        AudioManager.shared.play(soundEffect: .error)
                         self.crackProgressView.setProgress(0, animated: false)
                         self.statusLabel.text = "Fail :("
                         self.statusLabel.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
@@ -125,6 +133,9 @@ class CrackViewController: UIViewController {
     }
     
     @IBAction func onTarget(_ sender: Any) {
+        HapticFeedbackCenter.shared.selection.selectionChanged()
+        AudioManager.shared.play(soundEffect: .menuCommand)
+        
         self.currentTarget = (self.currentTarget + 1) % 4
         self.targetButton.setTitle(self.targets[self.currentTarget], for: .normal)
         
