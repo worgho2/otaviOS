@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConsoleViewController: UIViewController {
+class ConsoleViewController: BaseViewController {
 
     @IBOutlet weak var consoleView: UIView!
     @IBOutlet weak var consoleTextView: UITextView!
@@ -16,13 +16,21 @@ class ConsoleViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var runButton: UIButton!
     
+    @IBOutlet weak var suggestionView: UIView!
+    @IBOutlet weak var suggestionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.runTextField.delegate = self
         self.runTextField.becomeFirstResponder()
+        self.runTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
+        self.suggestionView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.suggestionButton.setTitleColor(.white, for: .normal)
         
         self.showConsoleHeaderAndCommand(command: "")
+        self.applyConsoleAppearance()
     }
 
     @IBAction func onClose(_ sender: Any) {
@@ -36,8 +44,14 @@ class ConsoleViewController: UIViewController {
         
         let command = cleanString(self.runTextField.text!)
         self.runTextField.text = ""
+        self.suggestionButton.titleLabel?.text = "help"
         self.commandManager(command: command)
     }
+    
+    @IBAction func onSuggestion(_ sender: UIButton) {
+        self.runTextField.text = sender.titleLabel?.text ?? ""
+    }
+    
     
     private func cleanString(_ s: String) -> String {
         return s.lowercased().components(separatedBy: .whitespacesAndNewlines).filter({!$0.isEmpty}).joined(separator: " ")
@@ -70,14 +84,30 @@ class ConsoleViewController: UIViewController {
         case "clear":
             self.showConsoleHeaderAndCommand(command: "")
             
-        case "root -p sacola":
+        case "sudo su -p sacola":
             Model.instance.hasRootAccess = true
             self.showConsoleCommandResult(isRootCommand: false, command: command)
             
-        case "root -guest":
-            Model.instance.hasRootAccess = false
-            self.showConsoleCommandResult(isRootCommand: false, command: command)
+        case "color -white":
+            Model.instance.consoleFontColor = .white
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
             
+        case "color -green":
+            Model.instance.consoleFontColor = .green
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color -blue":
+            Model.instance.consoleFontColor = .blue
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color -red":
+            Model.instance.consoleFontColor = .red
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
+
         default:
             self.showConsoleCommandResult(isRootCommand: false, command: command)
         }
@@ -86,11 +116,11 @@ class ConsoleViewController: UIViewController {
     private func rootCommandRunner(command: String) {
         switch command {
             
-        case "ie-provide-access --root":
+        case "ie access -allow":
             Model.instance.hasInternetExplorerAccess = true
             self.showConsoleCommandResult(isRootCommand: true, command: command)
             
-        case "ie-provide-access --guest":
+        case "ie access -deny":
             Model.instance.hasInternetExplorerAccess = false
             self.showConsoleCommandResult(isRootCommand: true, command: command)
             
@@ -118,11 +148,51 @@ class ConsoleViewController: UIViewController {
         self.consoleTextView.text += Model.instance.consoleRootRequiredError
     }
     
+    private func applyConsoleAppearance() {
+        self.consoleTextView.textColor = Model.instance.consoleFontColor
+        self.runTextField.textColor = Model.instance.consoleFontColor
+    }
+    
 }
 
 extension ConsoleViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.onRun(AnyClass.self)
         return true
+    }
+    
+    @objc func textFieldDidChange() {
+        self.suggestionButton.setTitle("help", for: .normal)
+        
+        for item in Model.instance.consoleKeys {
+            if item.key == "sudo su -p sacola" { continue }
+            if item.key == runTextField.text! {
+                self.suggestionButton.setTitle(item.key, for: .normal)
+                return
+            }
+        }
+        
+        for item in Model.instance.consoleKeys {
+            if item.key == "sudo su -p sacola" { continue }
+            if item.key.contains(runTextField.text!) {
+                self.suggestionButton.setTitle(item.key, for: .normal)
+                return
+            }
+        }
+        
+        for item in Model.instance.consoleRootKeys {
+            if item.key == runTextField.text! {
+                self.suggestionButton.setTitle(item.key, for: .normal)
+                return
+            }
+        }
+        
+        for item in Model.instance.consoleRootKeys {
+            if item.key.contains(runTextField.text!) {
+                self.suggestionButton.setTitle(item.key, for: .normal)
+                return
+            }
+        }
     }
 }

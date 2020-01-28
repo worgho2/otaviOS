@@ -43,6 +43,7 @@
 		7ADB040B23DA9DE9009C161A /* NotepadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB040A23DA9DE9009C161A /* NotepadViewController.swift */; };
 		7ADB040D23DAAB56009C161A /* Crack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB040C23DAAB56009C161A /* Crack.storyboard */; };
 		7ADB040F23DAAB64009C161A /* CrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB040E23DAAB64009C161A /* CrackViewController.swift */; };
+		7AE23E1023E0AD9D00FDB038 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E0F23E0AD9D00FDB038 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		7ADB040A23DA9DE9009C161A /* NotepadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewController.swift; sourceTree = "<group>"; };
 		7ADB040C23DAAB56009C161A /* Crack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Crack.storyboard; sourceTree = "<group>"; };
 		7ADB040E23DAAB64009C161A /* CrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrackViewController.swift; sourceTree = "<group>"; };
+		7AE23E0F23E0AD9D00FDB038 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		7AA3EFD623D8C369002DB972 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7AE23E0F23E0AD9D00FDB038 /* BaseViewController.swift */,
 				7ADB03F923DA0178009C161A /* StartupViewController.swift */,
 				7ADB03FD23DA021F009C161A /* DesktopViewController.swift */,
 				7ADB040623DA6944009C161A /* AlertViewController.swift */,
@@ -316,6 +319,7 @@
 				7A117FD423DD306F00099F80 /* HapticFeedbackCenter.swift in Sources */,
 				7ADB040723DA6944009C161A /* AlertViewController.swift in Sources */,
 				7A117FB923DD222100099F80 /* AudioLibrary.swift in Sources */,
+				7AE23E1023E0AD9D00FDB038 /* BaseViewController.swift in Sources */,
 				7ADB03FE23DA021F009C161A /* DesktopViewController.swift in Sources */,
 				7AA3EFC123D8C30B002DB972 /* AppDelegate.swift in Sources */,
 				7AA3EFC323D8C30B002DB972 /* SceneDelegate.swift in Sources */,

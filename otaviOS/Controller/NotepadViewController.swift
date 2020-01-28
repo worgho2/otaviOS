@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotepadViewController: UIViewController {
+class NotepadViewController: BaseViewController {
     
     @IBOutlet weak var notepadView: UIView!
     @IBOutlet weak var closeButton: UIButton!
@@ -23,6 +23,5 @@ class NotepadViewController: UIViewController {
         AudioManager.shared.play(soundEffect: .start)
         self.dismiss(animated: false, completion: nil)
     }
-    
 
 }

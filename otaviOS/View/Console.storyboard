@@ -26,11 +26,11 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="console_window" translatesAutoresizingMaskIntoConstraints="NO" id="lia-Wg-Mfo">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="500"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="commands" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-h2-Pif">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="results" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-h2-Pif">
                                         <rect key="frame" x="8" y="21" width="342" height="444"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="9"/>
+                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="send" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="N9A-iy-DX8">
@@ -41,8 +41,8 @@
                                             <constraint firstAttribute="height" constant="16" id="niL-zK-nYC"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="9"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" textContentType="name"/>
+                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="11"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V6-sB-k6T">
                                         <rect key="frame" x="290" y="473" width="63" height="21"/>
@@ -79,8 +79,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Console.baza - Running" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAH-sm-W9a">
-                                        <rect key="frame" x="25" y="4" width="303" height="17"/>
-                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="9"/>
+                                        <rect key="frame" x="25" y="4" width="303" height="19"/>
+                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -111,11 +111,35 @@
                                     <constraint firstItem="lia-Wg-Mfo" firstAttribute="height" secondItem="vtv-B4-DKC" secondAttribute="height" id="wr5-m5-6bQ"/>
                                 </constraints>
                             </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-qK-O9X">
+                                <rect key="frame" x="0.0" y="550" width="414" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1R-SK-DQ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                        <fontDescription key="fontDescription" name="px_sans_nouveaux" family="px sans nouveaux" pointSize="14"/>
+                                        <state key="normal" title="help"/>
+                                        <connections>
+                                            <action selector="onSuggestion:" destination="jiv-mu-myH" eventType="touchUpInside" id="gHp-Y1-QNT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Kyn-Ke-noR"/>
+                                    <constraint firstItem="k1R-SK-DQ1" firstAttribute="centerX" secondItem="vCD-qK-O9X" secondAttribute="centerX" id="adF-Wi-yT2"/>
+                                    <constraint firstItem="k1R-SK-DQ1" firstAttribute="width" secondItem="vCD-qK-O9X" secondAttribute="width" id="hEG-NL-ZcB"/>
+                                    <constraint firstItem="k1R-SK-DQ1" firstAttribute="height" secondItem="vCD-qK-O9X" secondAttribute="height" id="pCR-te-gP4"/>
+                                    <constraint firstItem="k1R-SK-DQ1" firstAttribute="centerY" secondItem="vCD-qK-O9X" secondAttribute="centerY" id="t8V-hk-2IY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vtv-B4-DKC" firstAttribute="top" secondItem="hTQ-BS-Fcq" secondAttribute="top" id="VeV-N0-Do2"/>
+                            <constraint firstItem="vCD-qK-O9X" firstAttribute="width" secondItem="kgq-mm-as9" secondAttribute="width" id="eQa-Kj-3Jb"/>
                             <constraint firstItem="vtv-B4-DKC" firstAttribute="centerX" secondItem="hTQ-BS-Fcq" secondAttribute="centerX" id="edE-Ar-xTZ"/>
+                            <constraint firstItem="vCD-qK-O9X" firstAttribute="centerX" secondItem="hTQ-BS-Fcq" secondAttribute="centerX" id="egb-O5-4Rs"/>
+                            <constraint firstItem="hTQ-BS-Fcq" firstAttribute="bottom" secondItem="vCD-qK-O9X" secondAttribute="bottom" constant="267" id="lAV-7k-C3T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTQ-BS-Fcq"/>
                     </view>
@@ -125,6 +149,8 @@
                         <outlet property="consoleView" destination="vtv-B4-DKC" id="2ty-wG-N54"/>
                         <outlet property="runButton" destination="8V6-sB-k6T" id="yeu-c9-iEY"/>
                         <outlet property="runTextField" destination="N9A-iy-DX8" id="sfb-TE-1gy"/>
+                        <outlet property="suggestionButton" destination="k1R-SK-DQ1" id="Soe-YS-Fih"/>
+                        <outlet property="suggestionView" destination="vCD-qK-O9X" id="BHD-bs-2Iw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kix-Nr-ZMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

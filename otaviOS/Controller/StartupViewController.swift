@@ -8,8 +8,8 @@
 
 import UIKit
 
-class StartupViewController: UIViewController {
-
+class StartupViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

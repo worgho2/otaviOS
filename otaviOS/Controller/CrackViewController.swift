@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CrackViewController: UIViewController {
+class CrackViewController: BaseViewController {
 
     @IBOutlet weak var crackView: UIView!
     @IBOutlet weak var closeButton: UIButton!
@@ -147,6 +147,5 @@ class CrackViewController: UIViewController {
             self.statusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
     }
-    
     
 }

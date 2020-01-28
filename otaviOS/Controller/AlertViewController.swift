@@ -20,7 +20,7 @@ struct AlertContent {
     var content: String
 }
 
-class AlertViewController: UIViewController {
+class AlertViewController: BaseViewController {
     
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var actionButton: UIButton!

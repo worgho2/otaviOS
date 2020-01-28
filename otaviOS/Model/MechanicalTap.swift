@@ -11,15 +11,15 @@ import Foundation
 class mechanicalTap {
     private var queue = [Int]()
     
-    var isDoubleTap: Bool {
+    public var isDoubleTap: Bool {
         return queue.count == 2 ? queue[0] == queue[1] : false
     }
     
-    var tappedTag: Int {
+    public var tappedTag: Int {
         return queue[0]
     }
     
-    func addTap(buttonTag: Int) {
+    public func addTap(buttonTag: Int) {
         queue.append(buttonTag)
         clearQueue()
     }
