@@ -31,7 +31,6 @@
 		7AA3EFC323D8C30B002DB972 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3EFC223D8C30B002DB972 /* SceneDelegate.swift */; };
 		7AA3EFCA23D8C30C002DB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA3EFC923D8C30C002DB972 /* Assets.xcassets */; };
 		7AA3EFD823D9F0CB002DB972 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3EFD723D9F0CB002DB972 /* Model.swift */; };
-		7ADB03F823D9FFE4009C161A /* Microsoft Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB03F723D9FFE4009C161A /* Microsoft Sans Serif.ttf */; };
 		7ADB03FA23DA0178009C161A /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB03F923DA0178009C161A /* StartupViewController.swift */; };
 		7ADB03FC23DA0215009C161A /* Desktop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB03FB23DA0215009C161A /* Desktop.storyboard */; };
 		7ADB03FE23DA021F009C161A /* DesktopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB03FD23DA021F009C161A /* DesktopViewController.swift */; };
@@ -46,6 +45,9 @@
 		7AE23E1023E0AD9D00FDB038 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E0F23E0AD9D00FDB038 /* BaseViewController.swift */; };
 		7AE23E1223E1C45F00FDB038 /* Shutdown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE23E1123E1C45F00FDB038 /* Shutdown.storyboard */; };
 		7AE23E1423E1C47400FDB038 /* ShutdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1323E1C47400FDB038 /* ShutdownViewController.swift */; };
+		7AE23E1623E1FD0200FDB038 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7AE23E1523E1FD0200FDB038 /* beep.wav */; };
+		7AE23E1823E21DEA00FDB038 /* InternetExplorer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE23E1723E21DEA00FDB038 /* InternetExplorer.storyboard */; };
+		7AE23E1A23E21DF900FDB038 /* InternetExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1923E21DF900FDB038 /* InternetExplorerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +77,6 @@
 		7AA3EFC923D8C30C002DB972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AA3EFCE23D8C30C002DB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AA3EFD723D9F0CB002DB972 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		7ADB03F723D9FFE4009C161A /* Microsoft Sans Serif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Microsoft Sans Serif.ttf"; sourceTree = "<group>"; };
 		7ADB03F923DA0178009C161A /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		7ADB03FB23DA0215009C161A /* Desktop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Desktop.storyboard; sourceTree = "<group>"; };
 		7ADB03FD23DA021F009C161A /* DesktopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +91,9 @@
 		7AE23E0F23E0AD9D00FDB038 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7AE23E1123E1C45F00FDB038 /* Shutdown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shutdown.storyboard; sourceTree = "<group>"; };
 		7AE23E1323E1C47400FDB038 /* ShutdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShutdownViewController.swift; sourceTree = "<group>"; };
+		7AE23E1523E1FD0200FDB038 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		7AE23E1723E21DEA00FDB038 /* InternetExplorer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InternetExplorer.storyboard; sourceTree = "<group>"; };
+		7AE23E1923E21DF900FDB038 /* InternetExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetExplorerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		7A117FBD23DD24B300099F80 /* SoudTracks */ = {
 			isa = PBXGroup;
 			children = (
+				7AE23E1523E1FD0200FDB038 /* beep.wav */,
 				7A117FD023DD2E7D00099F80 /* Windows XP Menu Command.wav */,
 				7A117FCE23DD2D9700099F80 /* Windows XP Information Bar.wav */,
 				7A117FC123DD24D400099F80 /* Windows XP Error.wav */,
@@ -202,6 +207,7 @@
 				7ADB040C23DAAB56009C161A /* Crack.storyboard */,
 				7A117FAF23DBAF0800099F80 /* Console.storyboard */,
 				7AE23E1123E1C45F00FDB038 /* Shutdown.storyboard */,
+				7AE23E1723E21DEA00FDB038 /* InternetExplorer.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 				7ADB040E23DAAB64009C161A /* CrackViewController.swift */,
 				7A117FAD23DBAED200099F80 /* ConsoleViewController.swift */,
 				7AE23E1323E1C47400FDB038 /* ShutdownViewController.swift */,
+				7AE23E1923E21DF900FDB038 /* InternetExplorerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				7ADB03FF23DA07CF009C161A /* px_sans_nouveaux.ttf */,
-				7ADB03F723D9FFE4009C161A /* Microsoft Sans Serif.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -295,9 +301,9 @@
 				7A117FC823DD24D400099F80 /* Windows XP Exclamation.wav in Resources */,
 				7A117FC623DD24D400099F80 /* Windows XP Shutdown.wav in Resources */,
 				7A117FCC23DD24D400099F80 /* Windows XP Hardware Remove.wav in Resources */,
-				7ADB03F823D9FFE4009C161A /* Microsoft Sans Serif.ttf in Resources */,
 				7A117FD123DD2E7D00099F80 /* Windows XP Menu Command.wav in Resources */,
 				7A117FCD23DD24D400099F80 /* Windows XP Hardware Insert.wav in Resources */,
+				7AE23E1623E1FD0200FDB038 /* beep.wav in Resources */,
 				7ADB040023DA07CF009C161A /* px_sans_nouveaux.ttf in Resources */,
 				7AA024A623D9F82D00284E01 /* LaunchScreen.storyboard in Resources */,
 				7A117FCA23DD24D400099F80 /* Windows XP Start.wav in Resources */,
@@ -308,6 +314,7 @@
 				7A117FB023DBAF0800099F80 /* Console.storyboard in Resources */,
 				7AA024A423D9F79600284E01 /* Startup.storyboard in Resources */,
 				7ADB040423DA691A009C161A /* Alert.storyboard in Resources */,
+				7AE23E1823E21DEA00FDB038 /* InternetExplorer.storyboard in Resources */,
 				7AA3EFCA23D8C30C002DB972 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 				7ADB03FE23DA021F009C161A /* DesktopViewController.swift in Sources */,
 				7AA3EFC123D8C30B002DB972 /* AppDelegate.swift in Sources */,
 				7AA3EFC323D8C30B002DB972 /* SceneDelegate.swift in Sources */,
+				7AE23E1A23E21DF900FDB038 /* InternetExplorerViewController.swift in Sources */,
 				7ADB040223DA3048009C161A /* MechanicalTap.swift in Sources */,
 				7AA3EFD823D9F0CB002DB972 /* Model.swift in Sources */,
 				7A117FBB23DD222100099F80 /* SoundEffects.swift in Sources */,

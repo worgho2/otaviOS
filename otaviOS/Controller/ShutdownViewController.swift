@@ -8,19 +8,39 @@
 
 import UIKit
 
-class ShutdownViewController: UIViewController {
+class ShutdownViewController: BaseViewController {
     
     var isRestart: Bool?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         AudioManager.shared.play(soundEffect: .shutdown)
         
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (Timer) in
-            self.decideRoute()
-            Timer.invalidate()
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (t) in
+            UIScreen.main.brightness = CGFloat(0.0)
+            t.invalidate()
         }
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (t) in
+            self.decideRoute()
+            t.invalidate()
+        }
+    }
+    
+    private func resetAppConfiguration() {
+        Model.instance.isConsoleCracked = false
+        Model.instance.hasRootAccess = false
+        Model.instance.hasInternetExplorerAccess = false
+        
+        Model.instance.isSoundMuted = false
+        
+        Model.instance.consoleFontColor = .white
     }
 
     private func decideRoute() {
@@ -32,10 +52,12 @@ class ShutdownViewController: UIViewController {
     }
     
     private func restartRoute() {
+        self.resetAppConfiguration()
         self.performSegue(withIdentifier: "segueStartup", sender: nil)
     }
     
     private func shutdownRoute() {
+        UIScreen.main.brightness = Model.instance.screenBrightness
         exit(0)
     }
 }

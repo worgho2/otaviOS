@@ -418,6 +418,7 @@
                         <segue destination="o3U-qI-Tip" kind="presentation" identifier="segueCrack" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yeo-pd-66d"/>
                         <segue destination="ARk-ZN-J1P" kind="presentation" identifier="segueConsole" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Ck2-Pf-twS"/>
                         <segue destination="Bum-ud-l4d" kind="presentation" identifier="segueShutdown" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="zZm-xa-0Q0"/>
+                        <segue destination="zKX-ur-AJx" kind="presentation" identifier="segueInternetExplorer" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="CrI-6F-ASs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDc-Hu-5WM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,6 +469,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZh-4M-ncx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136" y="52"/>
+        </scene>
+        <!--InternetExplorer-->
+        <scene sceneID="GIq-vc-jM9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InternetExplorer" id="zKX-ur-AJx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hg7-wQ-NGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="108"/>
         </scene>
     </scenes>
     <resources>

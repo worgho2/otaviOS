@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc func cableChanged() {
-        print("carai")
         if UIDevice.current.batteryState == .charging || UIDevice.current.batteryState == .full {
             AudioManager.shared.play(soundEffect: .hardwareInsert)
         } else {

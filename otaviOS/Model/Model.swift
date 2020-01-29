@@ -11,17 +11,23 @@ import UIKit
 class Model {
     static let instance = Model()
     
-    var isSoundMuted: Bool = false
+    //DEBUG OPTIONS--------------------------
     
+    var isSoundMuted: Bool = false
     var isConsoleCracked: Bool = false
     var hasRootAccess: Bool = false
     var hasInternetExplorerAccess: Bool = false
+    var skipStartupAnimation: Bool = false
+    
+    //---------------------------------------
     
     var consoleKeys: [String : String]
     var consoleRootKeys: [String : String]
     var consoleInvalidCommandError: String
     var consoleRootRequiredError: String
     var consoleFontColor: UIColor
+    
+    var screenBrightness: CGFloat
     
     func getConsoleHeader() -> String {
         return "IPHONE_XR:~ " + (self.hasRootAccess ? "root#" : "guest$") + "> "
@@ -31,6 +37,8 @@ class Model {
         self.consoleInvalidCommandError = "O comando é inválido. Utilize o comando [ help ]"
         self.consoleRootRequiredError = "Erro ao executar comando, o usuário ROOT é necessário."
         self.consoleFontColor = .white
+        
+        self.screenBrightness = UIScreen.main.brightness
         
         self.consoleKeys = [
             //help

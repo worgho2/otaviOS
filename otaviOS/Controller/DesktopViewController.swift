@@ -47,6 +47,8 @@ class DesktopViewController: BaseViewController {
         self.readMeButton.backgroundColor = .clear
         self.crackButton.backgroundColor = .clear
         
+        self.speakerButton.setBackgroundImage(UIImage(named: Model.instance.isSoundMuted ? "speaker_pressed" : "speaker_normal"), for: .normal)
+        
         self.setDefaultButtonBackground()
     }
     
@@ -126,7 +128,7 @@ class DesktopViewController: BaseViewController {
         case 0, 5:
             self.performSegue(withIdentifier: Model.instance.isConsoleCracked ? "segueConsole" : "segueAlert", sender: nil)
         case 1, 6:
-            self.performSegue(withIdentifier: "segueAlert", sender: nil)
+            self.performSegue(withIdentifier: "segueInternetExplorer", sender: nil)
         case 2, 7:
             self.performSegue(withIdentifier: "segueNotepad", sender: nil)
         case 3, 8:
@@ -146,7 +148,7 @@ class DesktopViewController: BaseViewController {
                 
                 if mechanicalTapSystem.tappedTag == 0 || mechanicalTapSystem.tappedTag == 5 {
                     vc.content = AlertContent(actionText: "Close", alertType: .error, description: "License checkout timed out.", content: "A licensing error occurred while the user was attempting to connect (Licensing timed out).")
-                } else if (mechanicalTapSystem.tappedTag == 1 || mechanicalTapSystem.tappedTag == 6) && !Model.instance.hasInternetExplorerAccess{
+                } else if (mechanicalTapSystem.tappedTag == 1 || mechanicalTapSystem.tappedTag == 6) && !Model.instance.hasInternetExplorerAccess {
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "Program Access Denied", content: "Access to Internet Explorer has been blocked, activate it from the Console.baza")
                 } else {
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "Work in Progress", content: "This feature has't been developed yet. Wait for it :)")
