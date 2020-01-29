@@ -14,6 +14,7 @@ class DesktopViewController: BaseViewController {
     @IBOutlet weak var internetExplorerButton: UIButton!
     @IBOutlet weak var readMeButton: UIButton!
     @IBOutlet weak var crackButton: UIButton!
+    @IBOutlet weak var speakerButton: UIButton!
     
     @IBOutlet weak var barImageView: UIImageView!
     @IBOutlet weak var timebarImageView: UIImageView!
@@ -76,7 +77,9 @@ class DesktopViewController: BaseViewController {
             self.startButton.setBackgroundImage(UIImage(named: "start_pressed"), for: .normal)
             self.startMenuView.isHidden = false
             self.startMenuView.isUserInteractionEnabled = true
-            
+        case 11:
+            self.speakerButton.setBackgroundImage(UIImage(named: Model.instance.isSoundMuted ? "speaker_normal" : "speaker_pressed"), for: .normal)
+            Model.instance.isSoundMuted.toggle()
         default:
             break
         }
@@ -102,7 +105,7 @@ class DesktopViewController: BaseViewController {
         self.setSelectedButtonBackground(buttonTag: sender.tag)
         self.mechanicalTapSystem.addTap(buttonTag: sender.tag)
         
-        if [5,6,7,8,9,10].contains(sender.tag) {
+        if [5,6,7,8,9,10,11].contains(sender.tag) {
             print("Vai acessar o botão de tag: \(mechanicalTapSystem.tappedTag)")
             self.decideSegueRoute()
         }
@@ -129,7 +132,7 @@ class DesktopViewController: BaseViewController {
         case 3, 8:
             self.performSegue(withIdentifier: "segueCrack", sender: nil)
         case 9, 10:
-            self.performSegue(withIdentifier: "segueAlert", sender: nil)
+            self.performSegue(withIdentifier: "segueShutdown", sender: nil)
         default:
             print("Warning - No segue detected")
         }
@@ -137,8 +140,10 @@ class DesktopViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "segueAlert" {
             if let vc = segue.destination as? AlertViewController {
+                
                 if mechanicalTapSystem.tappedTag == 0 || mechanicalTapSystem.tappedTag == 5 {
                     vc.content = AlertContent(actionText: "Close", alertType: .error, description: "License checkout timed out.", content: "A licensing error occurred while the user was attempting to connect (Licensing timed out).")
                 } else if (mechanicalTapSystem.tappedTag == 1 || mechanicalTapSystem.tappedTag == 6) && !Model.instance.hasInternetExplorerAccess{
@@ -146,19 +151,22 @@ class DesktopViewController: BaseViewController {
                 } else {
                     vc.content = AlertContent(actionText: "Close", alertType: .warning, description: "Work in Progress", content: "This feature has't been developed yet. Wait for it :)")
                 }
+                
             }
         }
+        
+        if segue.identifier == "segueShutdown" {
+            if let vc = segue.destination as? ShutdownViewController {
+                
+                if mechanicalTapSystem.tappedTag == 9 { //restart
+                    vc.isRestart = true
+                } else if mechanicalTapSystem.tappedTag == 10 { //shutdown
+                    vc.isRestart = false
+                }
+                
+            }
+        }
+        
     }
     
 }
-
-//if segue.identifier == "GoToCardDetailSegue" {
-//    if let vc = segue.destination as? CardDetailViewController {
-//        if self.myCard {
-//            vc.figurinhaAtual = Model.shared.figurinhaAtual
-//        } else {
-//            vc.figurinhaAtual = Model.shared.figurinhas[self.indexCard]
-//        }
-//
-//    }
-//}

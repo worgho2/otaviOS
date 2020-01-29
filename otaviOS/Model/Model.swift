@@ -11,7 +11,9 @@ import UIKit
 class Model {
     static let instance = Model()
     
-    var isConsoleCracked: Bool = true
+    var isSoundMuted: Bool = false
+    
+    var isConsoleCracked: Bool = false
     var hasRootAccess: Bool = false
     var hasInternetExplorerAccess: Bool = false
     

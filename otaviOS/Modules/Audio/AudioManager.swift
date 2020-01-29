@@ -14,19 +14,31 @@ class AudioManager{
     }
     
     func play(soundEffect: SoundEffectLibrary) {
-        soundEffects[soundEffect]?.play()
+        if Model.instance.isSoundMuted {
+            print("Alert - Mute")
+        } else {
+            soundEffects[soundEffect]?.play()
+        }
     }
     
     func play(song: SongLibrary) {
-        stopSongs()
-        stopIntrosWithLoops()
-        songs[song]?.play()
+        if Model.instance.isSoundMuted {
+            print("Alert - Mute")
+        } else {
+            stopSongs()
+            stopIntrosWithLoops()
+            songs[song]?.play()
+        }
     }
     
     func play(introWithLoop: IntroWithLoopLibrary) {
-        stopSongs()
-        stopIntrosWithLoops()
-        introsWithLoops[introWithLoop]?.play()
+        if Model.instance.isSoundMuted {
+            print("Alert - Mute")
+        } else {
+            stopSongs()
+            stopIntrosWithLoops()
+            introsWithLoops[introWithLoop]?.play()
+        }
     }
     
     func stopCurrentSong() {

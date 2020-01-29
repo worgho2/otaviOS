@@ -25,4 +25,6 @@ enum SoundEffectLibrary : String, CaseIterable {
     case start = "Windows XP Start.wav"
     case informationBar = "Windows XP Information Bar.wav"
     case menuCommand = "Windows XP Menu Command.wav"
+    case startup = "Windows XP Startup.wav"
+    case shutdown = "Windows XP Shutdown.wav"
 }

@@ -9,22 +9,33 @@
 import UIKit
 
 class ShutdownViewController: UIViewController {
+    
+    var isRestart: Bool?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AudioManager.shared.play(soundEffect: .shutdown)
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (Timer) in
+            self.decideRoute()
+            Timer.invalidate()
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private func decideRoute() {
+        if isRestart ?? false {
+            self.restartRoute()
+        } else {
+            self.shutdownRoute()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func restartRoute() {
+        self.performSegue(withIdentifier: "segueStartup", sender: nil)
     }
-    */
-
+    
+    private func shutdownRoute() {
+        exit(0)
+    }
 }
