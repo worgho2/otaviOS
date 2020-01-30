@@ -28,10 +28,22 @@ class Help: ConsoleCommandPack {
                 [ clear ]
                 [ color ]
                 [ device ]
-                [ otavio ] - Em construção
+                [ otavio ]
                 [ metasploit ]
                 [ sudo ]
                 [ ie ] - root necessário
+            
+            Todos os comandos possuem suporte ao help.
+            
+            Exemplo:
+                [ otavio ]
+                [ otavio -h ]
+                [ otavio --help ]
+            
+            Sintaxe:
+                [ <comando> <método> <parâmetro> ]
+            
+            Obs: Os métodos e parâmetros de cada comando estão listados em seus respectivos comandos de ajuda (help).
             """
         ]
         
