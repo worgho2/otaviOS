@@ -108,12 +108,10 @@ class DesktopViewController: BaseViewController {
         self.mechanicalTapSystem.addTap(buttonTag: sender.tag)
         
         if [5,6,7,8,9,10,11].contains(sender.tag) {
-            print("Vai acessar o botão de tag: \(mechanicalTapSystem.tappedTag)")
             self.decideSegueRoute()
         }
         
         if mechanicalTapSystem.isDoubleTap {
-            print("Vai acessar o botão de tag: \(mechanicalTapSystem.tappedTag)")
             self.decideSegueRoute()
         }
     }
@@ -136,7 +134,7 @@ class DesktopViewController: BaseViewController {
         case 9, 10:
             self.performSegue(withIdentifier: "segueShutdown", sender: nil)
         default:
-            print("Warning - No segue detected")
+            return
         }
         
     }

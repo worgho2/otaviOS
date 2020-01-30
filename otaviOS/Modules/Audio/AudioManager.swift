@@ -15,7 +15,6 @@ class AudioManager{
     
     func play(soundEffect: SoundEffectLibrary) {
         if Model.instance.isSoundMuted {
-            print("Alert - Mute")
         } else {
             soundEffects[soundEffect]?.play()
         }
@@ -23,7 +22,6 @@ class AudioManager{
     
     func play(song: SongLibrary) {
         if Model.instance.isSoundMuted {
-            print("Alert - Mute")
         } else {
             stopSongs()
             stopIntrosWithLoops()
@@ -33,7 +31,6 @@ class AudioManager{
     
     func play(introWithLoop: IntroWithLoopLibrary) {
         if Model.instance.isSoundMuted {
-            print("Alert - Mute")
         } else {
             stopSongs()
             stopIntrosWithLoops()

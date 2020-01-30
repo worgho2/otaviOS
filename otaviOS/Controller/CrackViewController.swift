@@ -128,8 +128,6 @@ class CrackViewController: BaseViewController {
             }
         }
 
-        
-        
     }
     
     @IBAction func onTarget(_ sender: Any) {

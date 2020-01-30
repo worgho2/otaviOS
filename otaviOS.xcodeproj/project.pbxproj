@@ -48,6 +48,17 @@
 		7AE23E1623E1FD0200FDB038 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7AE23E1523E1FD0200FDB038 /* beep.wav */; };
 		7AE23E1823E21DEA00FDB038 /* InternetExplorer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE23E1723E21DEA00FDB038 /* InternetExplorer.storyboard */; };
 		7AE23E1A23E21DF900FDB038 /* InternetExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1923E21DF900FDB038 /* InternetExplorerViewController.swift */; };
+		7AE23E1C23E34F8C00FDB038 /* ConsoleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1B23E34F8C00FDB038 /* ConsoleCommand.swift */; };
+		7AE23E1E23E350F500FDB038 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1D23E350F500FDB038 /* Error.swift */; };
+		7AE23E2023E352EF00FDB038 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E1F23E352EF00FDB038 /* Help.swift */; };
+		7AE23E2223E3534600FDB038 /* Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2123E3534600FDB038 /* Exit.swift */; };
+		7AE23E2423E3536E00FDB038 /* Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2323E3536E00FDB038 /* Clear.swift */; };
+		7AE23E2623E353BE00FDB038 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2523E353BE00FDB038 /* Color.swift */; };
+		7AE23E2823E3540F00FDB038 /* Otavio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2723E3540F00FDB038 /* Otavio.swift */; };
+		7AE23E2A23E3544600FDB038 /* Metasploit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2923E3544600FDB038 /* Metasploit.swift */; };
+		7AE23E2C23E354A700FDB038 /* Sudo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2B23E354A700FDB038 /* Sudo.swift */; };
+		7AE23E2E23E3550800FDB038 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2D23E3550800FDB038 /* Device.swift */; };
+		7AE23E3023E3555500FDB038 /* Ie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE23E2F23E3555500FDB038 /* Ie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +105,17 @@
 		7AE23E1523E1FD0200FDB038 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		7AE23E1723E21DEA00FDB038 /* InternetExplorer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InternetExplorer.storyboard; sourceTree = "<group>"; };
 		7AE23E1923E21DF900FDB038 /* InternetExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetExplorerViewController.swift; sourceTree = "<group>"; };
+		7AE23E1B23E34F8C00FDB038 /* ConsoleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleCommand.swift; sourceTree = "<group>"; };
+		7AE23E1D23E350F500FDB038 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		7AE23E1F23E352EF00FDB038 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		7AE23E2123E3534600FDB038 /* Exit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exit.swift; sourceTree = "<group>"; };
+		7AE23E2323E3536E00FDB038 /* Clear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clear.swift; sourceTree = "<group>"; };
+		7AE23E2523E353BE00FDB038 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7AE23E2723E3540F00FDB038 /* Otavio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otavio.swift; sourceTree = "<group>"; };
+		7AE23E2923E3544600FDB038 /* Metasploit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metasploit.swift; sourceTree = "<group>"; };
+		7AE23E2B23E354A700FDB038 /* Sudo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sudo.swift; sourceTree = "<group>"; };
+		7AE23E2D23E3550800FDB038 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		7AE23E2F23E3555500FDB038 /* Ie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +214,8 @@
 			children = (
 				7AA3EFD723D9F0CB002DB972 /* Model.swift */,
 				7ADB040123DA3048009C161A /* MechanicalTap.swift */,
+				7AE23E1B23E34F8C00FDB038 /* ConsoleCommand.swift */,
+				7AE23E3223E3558F00FDB038 /* ConsoleCommands */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +258,23 @@
 				7ADB03FF23DA07CF009C161A /* px_sans_nouveaux.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7AE23E3223E3558F00FDB038 /* ConsoleCommands */ = {
+			isa = PBXGroup;
+			children = (
+				7AE23E1D23E350F500FDB038 /* Error.swift */,
+				7AE23E1F23E352EF00FDB038 /* Help.swift */,
+				7AE23E2123E3534600FDB038 /* Exit.swift */,
+				7AE23E2323E3536E00FDB038 /* Clear.swift */,
+				7AE23E2523E353BE00FDB038 /* Color.swift */,
+				7AE23E2723E3540F00FDB038 /* Otavio.swift */,
+				7AE23E2923E3544600FDB038 /* Metasploit.swift */,
+				7AE23E2B23E354A700FDB038 /* Sudo.swift */,
+				7AE23E2D23E3550800FDB038 /* Device.swift */,
+				7AE23E2F23E3555500FDB038 /* Ie.swift */,
+			);
+			path = ConsoleCommands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,19 +372,30 @@
 				7A117FB823DD222100099F80 /* IntroWithLoop.swift in Sources */,
 				7ADB03FA23DA0178009C161A /* StartupViewController.swift in Sources */,
 				7A117FBC23DD222100099F80 /* AudioManager.swift in Sources */,
+				7AE23E1C23E34F8C00FDB038 /* ConsoleCommand.swift in Sources */,
+				7AE23E2223E3534600FDB038 /* Exit.swift in Sources */,
+				7AE23E2823E3540F00FDB038 /* Otavio.swift in Sources */,
 				7A117FD423DD306F00099F80 /* HapticFeedbackCenter.swift in Sources */,
 				7ADB040723DA6944009C161A /* AlertViewController.swift in Sources */,
+				7AE23E2E23E3550800FDB038 /* Device.swift in Sources */,
 				7A117FB923DD222100099F80 /* AudioLibrary.swift in Sources */,
 				7AE23E1023E0AD9D00FDB038 /* BaseViewController.swift in Sources */,
+				7AE23E2C23E354A700FDB038 /* Sudo.swift in Sources */,
 				7ADB03FE23DA021F009C161A /* DesktopViewController.swift in Sources */,
 				7AA3EFC123D8C30B002DB972 /* AppDelegate.swift in Sources */,
 				7AA3EFC323D8C30B002DB972 /* SceneDelegate.swift in Sources */,
 				7AE23E1A23E21DF900FDB038 /* InternetExplorerViewController.swift in Sources */,
 				7ADB040223DA3048009C161A /* MechanicalTap.swift in Sources */,
 				7AA3EFD823D9F0CB002DB972 /* Model.swift in Sources */,
+				7AE23E2023E352EF00FDB038 /* Help.swift in Sources */,
+				7AE23E2623E353BE00FDB038 /* Color.swift in Sources */,
 				7A117FBB23DD222100099F80 /* SoundEffects.swift in Sources */,
+				7AE23E3023E3555500FDB038 /* Ie.swift in Sources */,
 				7A117FAE23DBAED200099F80 /* ConsoleViewController.swift in Sources */,
 				7A117FBA23DD222100099F80 /* Song.swift in Sources */,
+				7AE23E2423E3536E00FDB038 /* Clear.swift in Sources */,
+				7AE23E2A23E3544600FDB038 /* Metasploit.swift in Sources */,
+				7AE23E1E23E350F500FDB038 /* Error.swift in Sources */,
 				7ADB040F23DAAB64009C161A /* CrackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
