@@ -11,7 +11,7 @@ import UIKit
 class Model {
     static let instance = Model()
     
-    static let isDebugging: Bool = true
+    static let isDebugging: Bool = false
     
     //DEBUG OPTIONS--------------------------
     var isSoundMuted: Bool = false || isDebugging
