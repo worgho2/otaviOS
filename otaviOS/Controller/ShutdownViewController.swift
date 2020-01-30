@@ -34,13 +34,7 @@ class ShutdownViewController: BaseViewController {
     }
     
     private func resetAppConfiguration() {
-        Model.instance.isConsoleCracked = false
-        Model.instance.hasRootAccess = false
-        Model.instance.hasInternetExplorerAccess = false
-        
-        Model.instance.isSoundMuted = false
-        
-        Model.instance.consoleFontColor = .white
+        Model.instance.resetOptions()
     }
 
     private func decideRoute() {

@@ -128,7 +128,7 @@ class DesktopViewController: BaseViewController {
         case 0, 5:
             self.performSegue(withIdentifier: Model.instance.isConsoleCracked ? "segueConsole" : "segueAlert", sender: nil)
         case 1, 6:
-            self.performSegue(withIdentifier: "segueInternetExplorer", sender: nil)
+            self.performSegue(withIdentifier: Model.instance.hasInternetExplorerAccess ? "segueInternetExplorer" : "segueAlert", sender: nil)
         case 2, 7:
             self.performSegue(withIdentifier: "segueNotepad", sender: nil)
         case 3, 8:

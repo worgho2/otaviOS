@@ -44,14 +44,13 @@ class ConsoleViewController: BaseViewController {
         
         let command = cleanString(self.runTextField.text!)
         self.runTextField.text = ""
-        self.suggestionButton.titleLabel?.text = "help"
+        self.suggestionButton.setTitle("help", for: .normal)
         self.commandManager(command: command)
     }
     
     @IBAction func onSuggestion(_ sender: UIButton) {
         self.runTextField.text = sender.titleLabel?.text ?? ""
     }
-    
     
     private func cleanString(_ s: String) -> String {
         return s.lowercased().components(separatedBy: .whitespacesAndNewlines).filter({!$0.isEmpty}).joined(separator: " ")
@@ -88,23 +87,51 @@ class ConsoleViewController: BaseViewController {
             Model.instance.hasRootAccess = true
             self.showConsoleCommandResult(isRootCommand: false, command: command)
             
-        case "color -white":
+        case "color text -white":
             Model.instance.consoleFontColor = .white
+            Model.instance.consoleBackgroundColor = Model.instance.consoleBackgroundColor == .white ? .black : Model.instance.consoleBackgroundColor
             self.applyConsoleAppearance()
             self.showConsoleHeaderAndCommand(command: "")
             
-        case "color -green":
+        case "color text -green":
             Model.instance.consoleFontColor = .green
+            Model.instance.consoleBackgroundColor = Model.instance.consoleBackgroundColor == .green ? .black : Model.instance.consoleBackgroundColor
             self.applyConsoleAppearance()
             self.showConsoleHeaderAndCommand(command: "")
             
-        case "color -blue":
+        case "color text -blue":
             Model.instance.consoleFontColor = .blue
+            Model.instance.consoleBackgroundColor = Model.instance.consoleBackgroundColor == .blue ? .white : Model.instance.consoleBackgroundColor
             self.applyConsoleAppearance()
             self.showConsoleHeaderAndCommand(command: "")
             
-        case "color -red":
+        case "color text -red":
             Model.instance.consoleFontColor = .red
+            Model.instance.consoleBackgroundColor = Model.instance.consoleBackgroundColor == .red ? .white : Model.instance.consoleBackgroundColor
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color bg -white":
+            Model.instance.consoleBackgroundColor = .white
+            Model.instance.consoleFontColor = Model.instance.consoleFontColor == .white ? .black : Model.instance.consoleFontColor
+            self.applyConsoleAppearance()
+            self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color bg -green":
+             Model.instance.consoleBackgroundColor = .green
+             Model.instance.consoleFontColor = Model.instance.consoleFontColor == .green ? .black : Model.instance.consoleFontColor
+             self.applyConsoleAppearance()
+             self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color bg -blue":
+             Model.instance.consoleBackgroundColor = .blue
+             Model.instance.consoleFontColor = Model.instance.consoleFontColor == .blue ? .white : Model.instance.consoleFontColor
+             self.applyConsoleAppearance()
+             self.showConsoleHeaderAndCommand(command: "")
+            
+        case "color bg -red":
+            Model.instance.consoleBackgroundColor = .red
+            Model.instance.consoleFontColor = Model.instance.consoleFontColor == .red ? .white : Model.instance.consoleFontColor
             self.applyConsoleAppearance()
             self.showConsoleHeaderAndCommand(command: "")
 
@@ -150,7 +177,11 @@ class ConsoleViewController: BaseViewController {
     
     private func applyConsoleAppearance() {
         self.consoleTextView.textColor = Model.instance.consoleFontColor
+        self.consoleTextView.backgroundColor = Model.instance.consoleBackgroundColor
+        
         self.runTextField.textColor = Model.instance.consoleFontColor
+        self.runTextField.backgroundColor = Model.instance.consoleBackgroundColor
+        self.runTextField.tintColor = Model.instance.consoleFontColor
     }
     
 }
@@ -166,7 +197,7 @@ extension ConsoleViewController: UITextFieldDelegate {
         self.suggestionButton.setTitle("help", for: .normal)
         
         for item in Model.instance.consoleKeys {
-            if item.key == "sudo su -p sacola" { continue }
+            if item.key == "sudo su -p sacola" || item.key == "" { continue }
             if item.key == runTextField.text! {
                 self.suggestionButton.setTitle(item.key, for: .normal)
                 return
@@ -174,7 +205,7 @@ extension ConsoleViewController: UITextFieldDelegate {
         }
         
         for item in Model.instance.consoleKeys {
-            if item.key == "sudo su -p sacola" { continue }
+            if item.key == "sudo su -p sacola" || item.key == "" { continue }
             if item.key.contains(runTextField.text!) {
                 self.suggestionButton.setTitle(item.key, for: .normal)
                 return
