@@ -1,0 +1,6 @@
+Voltando das férias com uma missão interna de focar em planejamento e em caminhos para carreira, iniciei o processo do primeiro Nano Challenge© com a ideia de reviver um projeto que iniciei na época do Crash Challenge©. O Windows98Crash.
+O app que existia transmitia a sensação de nostalgia, mas sem oferecer uma experiência completa e robusta. Foi então que eu decidi trabalhar em um novo conceito: otaviOS©. Um app com identidade visual e sonora similar aos sistemas Windows que oferece uma experiência imersiva e completa.
+
+O processo de identificação das pequenas experiências que o usuário tomaria no app, e a análise do contexto me fizeram entrar no processo de design de interações com vontade.
+
+Na organizacional do projeto, busquei uma arquitetura limpa e dividida em serviços.
